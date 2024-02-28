@@ -22,7 +22,7 @@
                         <div class="card-header">
                             <div clss="card-tools">
                                 <a href="{{ route('user.create') }}" class="btn btn-success"><i class="fas fa-plus"></i>
-                                    Tambah Data</a>
+                                    Tambah User</a>
                             </div>
                         </div>
                         <!-- /.card-header -->

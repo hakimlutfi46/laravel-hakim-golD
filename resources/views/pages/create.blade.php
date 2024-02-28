@@ -6,7 +6,10 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Tambah Data</h1>
+                        <div class="row mb-2">
+                            <a href="{{ route('dashboard') }}" class="btn btn-dark mr-2"><i class="fas fa-arrow-left"></i></a>
+                            <h1 class="m-0">Tambah Data</h1>
+                        </div>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -40,7 +43,7 @@
                     <!-- /.card-body -->
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="{{ route('login') }}" class="btn btn-success"><i class="fas fa-plus"></i> Submit Data</a>
                     </div>
                 </form>
             </div>
