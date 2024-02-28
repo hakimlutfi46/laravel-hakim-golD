@@ -8,6 +8,12 @@ use App\Models\User;
 class HomeController extends Controller
 {
 
+
+    public function create()
+    {
+        return view('create');
+    }
+
     public function dashboard()
     {
         return view('dashboard');
@@ -17,6 +23,6 @@ class HomeController extends Controller
     {
         $data = User::get();
 
-        return view('dashboard', compact('data'));
+        return view('index', compact('data'));
     }
 }
