@@ -18,22 +18,11 @@
             </div><!-- /.container-fluid -->
             <div class="row">
                 <div class="col-12">
-                    <a href="{{ route('user.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Table User</h3>
-
-                            <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control float-right"
-                                        placeholder="Search">
-
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                            <div clss="card-tools">
+                                <a href="{{ route('user.create') }}" class="btn btn-success"><i class="fas fa-plus"></i>
+                                    Tambah Data</a>
                             </div>
                         </div>
                         <!-- /.card-header -->

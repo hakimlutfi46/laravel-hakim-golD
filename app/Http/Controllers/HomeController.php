@@ -23,6 +23,6 @@ class HomeController extends Controller
     {
         $data = User::get();
 
-        return view('index', compact('data'));
+        return view('pages.index', compact('data'));
     }
 }
