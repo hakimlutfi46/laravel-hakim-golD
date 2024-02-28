@@ -7,10 +7,16 @@ use App\Models\User;
 
 class HomeController extends Controller
 {
+
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
+
     public function index()
     {
         $data = User::get();
 
-        return view('home', compact('data'));
+        return view('dashboard', compact('data'));
     }
 }
