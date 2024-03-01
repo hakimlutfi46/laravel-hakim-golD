@@ -29,3 +29,4 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/user', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/create', [HomeController::class, 'create'])->name('user.create');
+Route::post('/store', [HomeController::class, 'store'])->name('user.store');
