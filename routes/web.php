@@ -19,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/data', [BelajarController::class, 'index']);
+Route::get('/data', [BelajarController::class, 'index'])->name('data');
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -30,3 +30,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 Route::resource('/user', ResourceController::class);
+
+Route::view('tugas', '/pages/tugas')->name('tugas');

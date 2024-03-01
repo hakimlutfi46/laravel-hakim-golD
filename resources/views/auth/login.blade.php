@@ -19,7 +19,9 @@
             </div>
         </div>
         @error('email')
-            <small class="text-danger">{{ $message }}</small>
+            <div class="mb-3" style="margin-top: -1rem">
+                <small class="text-danger mb-3">{{ $message }}</small>
+            </div>
         @enderror
         <div class="input-group mb-3">
             <input type="password" name="password" class="form-control" placeholder="Password">
@@ -30,7 +32,9 @@
             </div>
         </div>
         @error('password')
-            <small class="text-danger">{{ $message }}</small>
+            <div class="mb-3" style="margin-top: -1rem">
+                <small class="text-danger mb-3">{{ $message }}</small>
+            </div>
         @enderror
         <div class="row">
 

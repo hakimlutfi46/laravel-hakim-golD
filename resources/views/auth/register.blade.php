@@ -15,7 +15,9 @@
             </div>
         </div>
         @error('name')
-            <div class="text-danger mb-3">{{ $message }}</div>
+            <div class="mb-3" style="margin-top: -1rem">
+                <small class="text-danger mb-3">{{ $message }}</small>
+            </div>
         @enderror
 
         <div class="input-group mb-3">
@@ -28,7 +30,9 @@
         </div>
 
         @error('email')
-            <div class="text-danger mb-3">{{ $message }}</div>
+            <div class="mb-3" style="margin-top: -1rem">
+                <small class="text-danger mb-3">{{ $message }}</small>
+            </div>
         @enderror
 
         <div class="input-group mb-3">
@@ -40,7 +44,9 @@
             </div>
         </div>
         @error('password')
-            <div class="text-danger mb-3">{{ $message }}</div>
+            <div class="mb-3" style="margin-top: -1rem">
+                <small class="text-danger mb-3">{{ $message }}</small>
+            </div>
         @enderror
 
         <div class="input-group mb-3">
@@ -53,7 +59,9 @@
         </div>
 
         @error('password_confirmation')
-            <div class="text-danger mb-3">{{ $message }}</div>
+            <div class="mb-3" style="margin-top: -1rem">
+                <small class="text-danger mb-3">{{ $message }}</small>
+            </div>
         @enderror
 
 
@@ -66,6 +74,9 @@
 
 
     <div class="text-center">
-        <a href="{{ route('login') }}" class="text-center">Sudah memiliki akun</a>
+        <p class="text-center">Sudah memiliki akun?
+            <a href="{{ route('login') }}" class="text-center">Login</a>
+        </p>
+
     </div>
 @endsection
