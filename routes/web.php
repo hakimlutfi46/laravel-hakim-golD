@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/data', [BelajarController::class, 'index'])->name('data');
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
@@ -29,6 +28,8 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
 
-Route::resource('/user', ResourceController::class);
-
-Route::view('tugas', '/pages/tugas')->name('tugas');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/data', [BelajarController::class, 'index'])->name('data');
+    Route::resource('/user', ResourceController::class);
+    Route::view('tugas', '/pages/tugas')->name('tugas');
+});
