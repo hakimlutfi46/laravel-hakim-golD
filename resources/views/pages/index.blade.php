@@ -43,17 +43,18 @@
                                             <td>{{ $d->name }}</td>
                                             <td>{{ $d->email }}</td>
 
-                                            <td class="d-flex justify-content-evenly">
+                                            <td class="d-flex">
+                                                <a href="{{ route('user.edit', ['user' => $d->id]) }}"
+                                                    class="btn btn-primary"><i class="fas fa-pen"></i> Edit</a>
 
-                                                <a href="/user/edit/{{ $d->id }}" class="btn btn-primary"><i
-                                                        class="fas fa-pen"></i> Edit</a>
-
-
-                                                <form action="/user/{{ $d->id }}" method="POST">
+                                                <form id="deleteForm{{ $d->id }}" action="/user/{{ $d->id }}"
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger" type="submit"><i
-                                                            class="fas fa-trash"></i> Hapus</button>
+                                                    <button class="btn btn-danger mx-1" type="button"
+                                                        onclick="confirmDelete({{ $d->id }})">
+                                                        <i class="fas fa-trash"></i> Hapus
+                                                    </button>
                                                 </form>
 
                                             </td>
@@ -69,4 +70,22 @@
             </div>
         </div>
     </div>
+    <script>
+        function confirmDelete(id) {
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Anda tidak akan bisa mengembalikan data ini!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('deleteForm' + id).submit();
+                }
+            });
+        }
+    </script>
 @endsection
