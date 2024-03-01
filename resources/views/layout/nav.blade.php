@@ -17,7 +17,28 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('logout') }}" class="btn btn-dark"><i class="fas fa-door-open"></i> Logout</a>
+            <a id="logoutBtn" href="{{ route('logout') }}" class="btn btn-dark"><i class="fas fa-door-open"></i>
+                Logout</a>
         </li>
     </ul>
 </nav>
+<script>
+    document.getElementById('logoutBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Menghentikan aksi default dari tautan
+
+        Swal.fire({
+            title: 'Apakah Anda yakin ingin logout?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, Logout!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href =
+                "{{ route('logout') }}"; // Melakukan logout dengan mengarahkan ke route logout
+            }
+        });
+    });
+</script>
