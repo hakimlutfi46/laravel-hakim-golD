@@ -21,7 +21,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div clss="card-tools">
-                                <a href="{{ route('user.create') }}" class="btn btn-success"><i class="fas fa-plus"></i>
+                                <a href="/user/create" class="btn btn-success"><i class="fas fa-plus"></i>
                                     Tambah User</a>
                             </div>
                         </div>
@@ -45,8 +45,8 @@
 
                                             <td class="d-flex justify-content-evenly">
 
-                                                <a href="{{ route('user.edit', ['user' => $d->id]) }}"
-                                                    class="btn btn-primary"><i class="fas fa-pen"></i> Edit</a>
+                                                <a href="/user/edit/{{ $d->id }}" class="btn btn-primary"><i
+                                                        class="fas fa-pen"></i> Edit</a>
 
 
                                                 <form action="/user/{{ $d->id }}" method="POST">
