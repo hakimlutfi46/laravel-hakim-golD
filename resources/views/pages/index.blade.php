@@ -42,11 +42,18 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $d->name }}</td>
                                             <td>{{ $d->email }}</td>
-                                            <td>
+
+                                            <td class="d-flex justify-content-evenly">
                                                 <a href="" class="btn btn-primary"><i class="fas fa-pen"></i>
                                                     Edit</a>
-                                                <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i>
-                                                    Hapus</a>
+
+                                                <form action="/user/{{ $d->id }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit"><i
+                                                            class="fas fa-trash"></i> Hapus</button>
+                                                </form>
+
                                             </td>
                                         </tr>
                                     @endforeach

@@ -7,7 +7,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <div class="row mb-2">
-                            <a href="{{ route('dashboard') }}" class="btn btn-dark mr-2"><i class="fas fa-arrow-left"></i></a>
+                            <a href="/user" class="btn btn-dark mr-2"><i class="fas fa-arrow-left"></i></a>
                             <h1 class="m-0">Tambah Data</h1>
                         </div>
                     </div><!-- /.col -->

@@ -22,7 +22,7 @@
         <div class="row">
             <!-- /.col -->
             <div class="col-12 mb-2">
-                <a href="{{ route('dashboard') }}" class="btn btn-primary">Login</a>
+                <a href="/user" class="btn btn-primary">Login</a>
             </div>
             <!-- /.col -->
         </div>
