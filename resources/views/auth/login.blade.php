@@ -48,11 +48,4 @@
         Belum punya akun?
         <a href="{{ route('register') }}" class="text-center"> Register</a>
     </p>
-
-
-    @if ($message = Session::get('failed'))
-        <script>
-            Swal.fire('{{ $message }}')
-        </script>
-    @endif
 @endsection

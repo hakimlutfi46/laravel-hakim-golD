@@ -6,8 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class ResourceController extends Controller
@@ -95,7 +96,7 @@ class ResourceController extends Controller
         }
         $user->save();
 
-        return redirect('/user');
+        return redirect('/user')->with('success', 'Data berhasil di update');
     }
 
     /**

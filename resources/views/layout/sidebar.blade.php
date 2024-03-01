@@ -21,9 +21,9 @@
 
                 <li class="nav-item">
                     <a href="/user" class="nav-link {{ request()->is('user*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-download"></i>
                         <p>
-                            Dashboard
+                            CRUD
                         </p>
                     </a>
                 </li>

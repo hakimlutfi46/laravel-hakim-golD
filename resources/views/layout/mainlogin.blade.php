@@ -12,7 +12,6 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
                 @yield('head')
@@ -20,11 +19,8 @@
             <div class="card-body">
                 @yield('content')
             </div>
-            <!-- /.card-body -->
         </div>
-        <!-- /.card -->
     </div>
-    <!-- /.login-box -->
 
     @include('layout.partials.login.footer')
 </body>

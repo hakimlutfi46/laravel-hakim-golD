@@ -32,3 +32,20 @@
  <script src="{{ asset('lte/dist/js/demo.js') }}"></script>
  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
  <script src="{{ asset('lte/dist/js/pages/dashboard.js') }}"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ <script>
+     @if (session('success'))
+         Swal.fire({
+             icon: 'success',
+             title: 'Success!',
+             text: '{{ session('success') }}'
+         });
+     @elseif (session('failed'))
+         Swal.fire({
+             icon: 'error',
+             title: 'Oops...',
+             text: '{{ session('failed') }}'
+         });
+     @endif
+ </script>
