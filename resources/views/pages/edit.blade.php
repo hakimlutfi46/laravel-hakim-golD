@@ -8,7 +8,7 @@
                     <div class="col-sm-6">
                         <div class="row mb-2">
                             <a href="/user" class="btn btn-dark mr-2"><i class="fas fa-arrow-left"></i></a>
-                            <h1 class="m-0">Tambah Data</h1>
+                            <h1 class="m-0">Edit Data</h1>
                         </div>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
@@ -25,13 +25,14 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('user.store') }}" method="POST">
+                <form action="{{ route('user.update', ['user' => $data->id]) }}" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" name="name"
-                                value="{{ old('name') }}" placeholder="Enter Name">
+                                value="{{ $data->name }}" placeholder="Enter Name">
                             @error('name')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -39,7 +40,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" name="email"
-                                value="{{ old('email') }}" placeholder="Enter email">
+                                value="{{ $data->email }}" placeholder="Enter email">
                             @error('email')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -47,7 +48,7 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1" name="password"
-                                value="{{ old('password') }}" placeholder="Password">
+                                placeholder="Password">
                             @error('password')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -56,9 +57,10 @@
                     <!-- /.card-body -->
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i> Submit Data</button>
+                        <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i> Edit Data</button>
                     </div>
                 </form>
+
             </div>
         </div>
 

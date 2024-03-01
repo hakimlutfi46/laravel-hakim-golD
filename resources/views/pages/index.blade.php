@@ -44,8 +44,10 @@
                                             <td>{{ $d->email }}</td>
 
                                             <td class="d-flex justify-content-evenly">
-                                                <a href="" class="btn btn-primary"><i class="fas fa-pen"></i>
-                                                    Edit</a>
+
+                                                <a href="{{ route('user.edit', ['user' => $d->id]) }}"
+                                                    class="btn btn-primary"><i class="fas fa-pen"></i> Edit</a>
+
 
                                                 <form action="/user/{{ $d->id }}" method="POST">
                                                     @csrf

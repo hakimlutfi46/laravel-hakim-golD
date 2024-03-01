@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -37,9 +38,13 @@ class ResourceController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required|min:8'
         ]);
-        if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
+
+        if ($validator->fails()) {
+            Session::flashInput($request->input());
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
 
         User::create([
             'name' => $request->name,
@@ -63,7 +68,8 @@ class ResourceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = User::findOrFail($id);
+        return view('pages.edit', compact('data'));
     }
 
     /**
@@ -71,7 +77,25 @@ class ResourceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'min:8|required' // Password bisa kosong dalam kasus update
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->filled('password')) { // Jika password diisi dalam form
+            $user->password = Hash::make($request->password);
+        }
+        $user->save();
+
+        return redirect('/user');
     }
 
     /**
