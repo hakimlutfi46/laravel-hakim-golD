@@ -21,7 +21,7 @@
 <body>
     <div class="container">
         <marquee>
-
+            <h2>{{ $word3 }}</h2>
             <h2>{{ $word2 }}</h2>
         </marquee>
         <h3>{{ $query }}</h3>
