@@ -21,7 +21,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div clss="card-tools">
-                                <a href="/user/create" class="btn btn-success"><i class="fas fa-plus"></i>
+                                <a href="/user/create" class="btn btn-success"><i class="fas fa-user-plus"></i>
                                     Tambah User</a>
                             </div>
                         </div>
@@ -45,15 +45,15 @@
 
                                             <td class="d-flex">
                                                 <a href="{{ route('user.edit', ['user' => $d->id]) }}"
-                                                    class="btn btn-primary"><i class="fas fa-pen"></i> Edit</a>
+                                                    class="btn btn-outline-primary"><i class="fas fa-pen"></i></a>
 
                                                 <form id="deleteForm{{ $d->id }}" action="/user/{{ $d->id }}"
                                                     method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger mx-1" type="button"
+                                                    <button class="btn btn-outline-danger mx-1" type="button"
                                                         onclick="confirmDelete({{ $d->id }})">
-                                                        <i class="fas fa-trash"></i> Hapus
+                                                        <i class="fas fa-trash"></i>
                                                     </button>
                                                 </form>
 
