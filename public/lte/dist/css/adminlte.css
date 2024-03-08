@@ -34973,7 +34973,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .register-page {
   -ms-flex-align: center;
   align-items: center;
-  background-color: #e9ecef;
+  background-color: white;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -34985,7 +34985,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .login-box,
 .register-box {
-  width: 360px;
+  width: 400px;
 }
 
 @media (max-width: 576px) {

@@ -1,6 +1,6 @@
 @extends('layout.mainlogin')
 @section('head')
-    <a href="{{ route('login') }}" class="h1"><b>Register</b>Page</a>
+    <a href="{{ route('login') }}" class="h1 text-decoration-none"><b>Register</b>Page</a>
 @endsection
 
 @section('content')
@@ -8,11 +8,7 @@
         @csrf
         <div class="input-group mb-3">
             <input type="text" name="name" class="form-control" placeholder="Full name" value="{{ old('name') }}">
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-user"></span>
-                </div>
-            </div>
+
         </div>
         @error('name')
             <div class="mb-3" style="margin-top: -1rem">
@@ -22,11 +18,7 @@
 
         <div class="input-group mb-3">
             <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-envelope"></span>
-                </div>
-            </div>
+
         </div>
 
         @error('email')
@@ -37,11 +29,7 @@
 
         <div class="input-group mb-3">
             <input type="password" name="password" class="form-control" placeholder="Password">
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-lock"></span>
-                </div>
-            </div>
+
         </div>
         @error('password')
             <div class="mb-3" style="margin-top: -1rem">
@@ -51,11 +39,6 @@
 
         <div class="input-group mb-3">
             <input type="password" name="password_confirmation" class="form-control" placeholder="Retype password">
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-lock"></span>
-                </div>
-            </div>
         </div>
 
         @error('password_confirmation')
@@ -75,7 +58,7 @@
 
     <div class="text-center">
         <p class="text-center">Sudah memiliki akun?
-            <a href="{{ route('login') }}" class="text-center">Login</a>
+            <a href="{{ route('login') }}" class="text-center text-decoration-none">Login</a>
         </p>
 
     </div>
