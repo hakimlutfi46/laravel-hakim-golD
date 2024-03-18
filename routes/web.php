@@ -29,8 +29,12 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'cekLevel:admin'])->group(function () {
     Route::get('/data', [BelajarController::class, 'index'])->name('data');
-    Route::resource('/user', ResourceController::class);
+    Route::resource('/admin', ResourceController::class);
     Route::view('tugas', '/pages/tugas')->name('tugas');
+});
+
+Route::middleware(['auth', 'cekLevel:user'])->group(function () {
+    Route::view('user', '/pages/index2')->name('user');
 });
