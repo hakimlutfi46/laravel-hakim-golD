@@ -21,7 +21,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div clss="card-tools">
-                                <a href="/user/create" class="btn btn-success"><i class="fas fa-user-plus"></i>
+                                <a href="/admin/create" class="btn btn-success"><i class="fas fa-user-plus"></i>
                                     Tambah User</a>
                             </div>
                         </div>
@@ -33,6 +33,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
+                                        <th>Role</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -42,12 +43,18 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $d->name }}</td>
                                             <td>{{ $d->email }}</td>
+                                            <td>
+                                                <span
+                                                    class="@if ($d->role === 'user') text-primary @elseif($d->role === 'admin') text-success @endif">
+                                                    {{ $d->role }}
+                                                </span>
+                                            </td>
 
                                             <td class="d-flex">
-                                                <a href="{{ route('user.edit', ['user' => $d->id]) }}"
+                                                <a href="{{ route('admin.edit', ['admin' => $d->id]) }}"
                                                     class="btn btn-outline-primary"><i class="fas fa-pen"></i></a>
 
-                                                <form id="deleteForm{{ $d->id }}" action="/user/{{ $d->id }}"
+                                                <form id="deleteForm{{ $d->id }}" action="/admin/{{ $d->id }}"
                                                     method="POST">
                                                     @csrf
                                                     @method('DELETE')

@@ -5,14 +5,40 @@
 @endsection
 
 @section('content')
-    <div class="mb-3 rounded border border-primary">
-        <p class="px-3 pt-2 h5">Login Info</p>
-        <p class="px-3">
-            Email : lutfihakim@gmail.com
-            <br>
-            Password : 12345678
-        </p>
+    <div class="accordion mb-3 rounded" id="loginInfoAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="loginInfoHeading">
+                <button class="accordion-button text-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#loginInfoCollapse" aria-expanded="true" aria-controls="loginInfoCollapse">
+                    Login Info
+                </button>
+            </h2>
+            <div id="loginInfoCollapse" class="accordion-collapse collapse" aria-labelledby="loginInfoHeading"
+                data-bs-parent="#loginInfoAccordion">
+                <div class="accordion-body">
+                    <p class="px-3 pt-2 h5">Role Admin</p>
+                    <p class="px-3">
+                        Email : admin123@gmail.com
+                        <br>
+                        Password : 12345678
+                    </p>
+                </div>
+                <div class="accordion-body">
+                    <p class="px-3 pt-2 h5">Role User</p>
+                    <p class="px-3">
+                        Email : lutfihakim@gmail.com
+                        <br>
+                        Password : 12345678
+                        <br>
+                    </p>
+                    <p>Silahkan <a href="{{ route('register') }}" class="text-decoration-none">Register</a> jika
+                        ingin
+                        membuat user baru</p>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <form action="{{ route('login-proses') }}" method="post">
         @csrf

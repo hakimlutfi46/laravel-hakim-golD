@@ -7,7 +7,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <div class="row mb-2">
-                            <a href="/user" class="btn btn-dark mr-2"><i class="fas fa-arrow-left"></i></a>
+                            <a href="/admin" class="btn btn-dark mr-2"><i class="fas fa-arrow-left"></i></a>
                             <h1 class="m-0">Edit Data</h1>
                         </div>
                     </div><!-- /.col -->
@@ -25,7 +25,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('user.update', ['user' => $data->id]) }}" method="POST">
+                <form action="{{ route('admin.update', ['admin' => $data->id]) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
