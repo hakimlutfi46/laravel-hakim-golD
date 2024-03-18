@@ -53,7 +53,7 @@ class ResourceController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        return redirect('/user');
+        return redirect('/admin');
     }
 
     /**
@@ -96,7 +96,7 @@ class ResourceController extends Controller
         }
         $user->save();
 
-        return redirect('/user')->with('success', 'Data berhasil di update');
+        return redirect('/admin')->with('success', 'Data berhasil di update');
     }
 
     /**
@@ -104,7 +104,14 @@ class ResourceController extends Controller
      */
     public function destroy(string $id)
     {
-        DB::table('users')->where('id', '=', $id)->delete();
-        return redirect('/user');
+        $user = User::findOrFail($id);
+
+        if ($user->role === 'admin') {
+            return redirect('/admin')->with('failed', 'Admin tidak boleh dihapus.');
+        }
+
+        $user->delete();
+
+        return redirect('/admin')->with('success', 'Pengguna berhasil dihapus.');
     }
 }
