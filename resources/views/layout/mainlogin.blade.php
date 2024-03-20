@@ -11,11 +11,6 @@
 </head>
 
 <body class="hold-transition login-page">
-    {{-- <div class="login-box">
-        <div class="card card-outline card-primary">
-
-        </div>
-    </div> --}}
 
     <div class="login-box">
         <div class="card-header text-center mb-4">
